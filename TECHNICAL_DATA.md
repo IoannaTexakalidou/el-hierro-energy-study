@@ -69,7 +69,7 @@ A current n-type TOPCon module, typical of what is installed in utility PV plant
 
 ## 4. Bill of materials for the least-cost system
 
-The cheapest system the model found covers 97.5% of the island's electricity from wind and sun. The existing diesel plant (12.7 MW) stays as backup and covers the remaining 2.5%, so it is not bought again and is not in this list.
+The cheapest system the model found covers 97.5% of the island's electricity from wind and sun. The existing diesel plant (12.7 MW) stays as backup and covers the remaining 2.5%, so it is not bought again and is not in this list. The system is designed from a blank sheet: the existing Gorona wind turbines and water storage are not counted, so everything below is new equipment. The battery is assumed to have grid-forming inverters, which keep the grid stable.
 
 | Item | Quantity | Unit cost | Total |
 |---|---|---|---|

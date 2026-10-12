@@ -47,6 +47,11 @@ Where the island's electricity came from in each month of 2025. Blue is wind pow
 | Cost of electricity | 65 EUR/MWh (diesel alone: 196 EUR/MWh) |
 | CO2 | from 21,300 to 1,000 tonnes per year |
 
+Two assumptions sit behind this result:
+
+* It is designed from a blank sheet, as if the island had only its diesel plant. The existing Gorona turbines and water storage are not counted, so the budget is the cost of building the whole system new. The existing plant is studied separately below.
+* The battery uses grid-forming inverters, which keep the grid stable in place of spinning machines. Without them the stability limit described below would apply.
+
 The equipment data sheets, a bill of materials and the cost breakdown are in [TECHNICAL_DATA.md](TECHNICAL_DATA.md).
 
 ## The figures explained
@@ -71,29 +76,31 @@ With wind (top), there is a three day gap from 8 to 10 July when the wind droppe
 
 ![The real plant through my model](figures/s6_gorona_snsp.png)
 
-This figure is about the existing Gorona plant (wind and water). I ran it through my model many times. Each time I allowed wind to cover a different maximum share of demand at any moment, shown on the horizontal axis. The vertical axis shows the share of the year's electricity the plant would then supply.
+This figure is about the plant the island already has (wind turbines plus water storage).
 
-What really happened in 2025 (45.5%) matches a limit of about 44%. In other words, the plant behaves as if wind is never allowed to cover more than 44% of what the island needs at a given moment. With no limit at all, the same plant would reach about 57%. The bottleneck is keeping the grid stable, not a shortage of wind.
+A small island grid has to stay in balance every second. Diesel engines and water turbines help with this because their heavy spinning parts act like a flywheel and absorb sudden changes. Wind turbines and solar panels do not, so the operator never lets wind supply everything at once and always keeps some spinning machines running.
+
+I tested this in my model by capping how much of the demand wind may cover at any moment (horizontal axis) and looking at the yearly renewable share that results (vertical axis). The real 2025 result, 45.5%, appears at a cap of about 44%. Without any cap the same plant would reach about 57%. So the plant is held back by grid stability, not by a lack of wind.
 
 ### Checking my wind model against the real wind farm
 
 ![Wind model validation](figures/w4_validation.png)
 
-This is about wind only. Before trusting my model, I checked it against what the real Gorona wind farm produced in 2025.
+This is about wind only. Before using my wind model, I compared it with what the real wind farm produced in 2025.
 
-On the left, each dot is one day: the horizontal position is what my model predicted, and the vertical position is what the real farm produced. If the model were perfect, all dots would sit on the dashed diagonal line. They follow it closely (correlation r = 0.84, where 1 would be perfect). On the right are the monthly totals of my model (blue) and the real farm (grey).
+On the left, each dot is one day: my model's prediction across, the real output up. A perfect model would put every dot on the dashed line. They stay close to it (correlation 0.84, where 1 is perfect). On the right are the monthly totals, my model in blue and the real farm in grey.
 
-One correction was needed. The weather data I used comes in squares 25 km wide, too coarse to see the ridge where the turbines stand. At first my model therefore had 14% more wind than the site really has, so I scaled it down to match the site's published production. In winter the real farm made less than my model, probably because the operator turns turbines down when the island cannot absorb the power.
+One correction was needed. The weather data comes in squares 25 km wide, too coarse to see the ridge the turbines stand on, so it showed 14% more wind than the site really gets. I scaled it down to match the farm's published production.
 
 ### The wind turbine: power curve and Cp
 
 ![Turbine power curve and Cp](figures/w1_power_curve_cp.png)
 
-This is also about wind. It describes the turbine I used, the Enercon E-70, the same model that stands on El Hierro today.
+This is also about wind. It shows the turbine I used, the Enercon E-70, the same model that already stands on El Hierro.
 
-The left graph is the power curve, the manufacturer's data on how much electricity the turbine makes at each wind speed. It starts at 2 m/s, rises steeply, and reaches its full 2.3 MW at about 15 m/s. Above that it holds steady until it shuts down for safety at 25 m/s.
+Left, the power curve: how much electricity the turbine makes at each wind speed. It starts at 2 m/s, reaches its full 2.3 MW at about 15 m/s, and stops for safety at 25 m/s.
 
-The right graph shows Cp, the share of the wind's energy passing through the blades that the turbine turns into electricity. Physics sets a ceiling of 59.3% (the Betz limit, dashed line), because the air must keep moving past the turbine. The E-70 reaches about 50% at moderate winds of 8 to 10 m/s, which is close to that ceiling. At high winds the share falls on purpose, because the turbine is already at full power and lets the extra wind pass.
+Right, Cp: the share of the wind's energy that becomes electricity. No turbine can pass 59.3% (dashed line), because the air has to keep flowing out behind the blades or no new air could come in. The E-70 reaches about 50%. In strong winds the share drops on purpose: the generator is already at its maximum, so the blades turn to let the extra wind pass instead of overloading it.
 
 ### One solar panel through the year
 
