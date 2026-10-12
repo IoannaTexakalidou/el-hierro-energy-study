@@ -90,6 +90,8 @@ The cheapest system the model found covers 97.5% of the island's electricity fro
 | Removal of older turbines | 0.09 |
 | Grid connection | 0.05 |
 
+The parts of each item may not add up exactly to its total because of rounding.
+
 | Solar plant (35 MWp) | Million EUR |
 |---|---|
 | Solar panels | 5.04 |

@@ -30,7 +30,7 @@ Where the island's electricity came from in each month of 2025. Blue is wind pow
 
 3. The real plant is held back by grid stability, not by a lack of energy. When I fed the real Gorona plant into my model, I could only reproduce what really happened in 2025 when I limited wind to about 44% of demand at any moment. A small island grid becomes unstable if too much of its power comes from wind at once, so the operator keeps diesel engines or water turbines spinning as a safety margin. I also measured from the operator's data that the water storage returns only 48% of the energy used to pump the water up.
 
-4. For the planned expansion, a battery that stabilises the grid matters more than extra turbines. Gorona has announced more wind and solar. My model says that under today's operating limit this brings the island to about 64% renewable. If they add even a small battery (10 MWh) that can stabilise the grid, the limit can be lifted and the share rises to about 83%.
+4. For the planned expansion, a battery that stabilises the grid matters more than extra turbines. Gorona has announced more wind and solar. My model says that under today's operating limit this brings the island to about 64% renewable. If a small battery (10 MWh) that can stabilise the grid allows the operator to lift that limit, the share rises to about 83%. Bigger batteries add very little on top of that.
 
 5. The result holds when the prices change. I varied every cost within the range its own source publishes. The cost stayed between 56 and 73 EUR/MWh, always far below diesel. I also tested the design on a different year's weather (2024), and it still reached 95.7% renewable at 66 EUR/MWh.
 
@@ -83,7 +83,7 @@ This is about wind only. Before trusting my model, I checked it against what the
 
 On the left, each dot is one day: the horizontal position is what my model predicted, and the vertical position is what the real farm produced. If the model were perfect, all dots would sit on the dashed diagonal line. They follow it closely (correlation r = 0.84, where 1 would be perfect). On the right are the monthly totals of my model (blue) and the real farm (grey).
 
-One correction was needed. The weather data I used comes in squares 25 km wide, too coarse to see the ridge where the turbines stand. At first my model therefore had 14% more wind than the site really has, so I scaled it down to match the site's published production. The real farm sometimes makes less than my model in winter because the operator turns turbines down when the island cannot absorb the power.
+One correction was needed. The weather data I used comes in squares 25 km wide, too coarse to see the ridge where the turbines stand. At first my model therefore had 14% more wind than the site really has, so I scaled it down to match the site's published production. In winter the real farm made less than my model, probably because the operator turns turbines down when the island cannot absorb the power.
 
 ### The wind turbine: power curve and Cp
 
@@ -99,7 +99,7 @@ The right graph shows Cp, the share of the wind's energy passing through the bla
 
 ![One PV module through the year](figures/p1_monthly_daily.png)
 
-This is about solar. It shows what one 580 W panel would produce on El Hierro. On the left is the energy per month: about 104 kWh in May and about 71 kWh in December. Unlike in northern Europe, winter output is still about 70% of the best month, which makes solar very dependable here. On the right is the average power over a day, peaking in the early afternoon. Over the year one panel makes about 1,061 kWh. Dust from the Sahara costs about 6% of that and heat about 5%.
+This is about solar. It shows what one 580 W panel would produce on El Hierro. On the left is the energy per month: about 104 kWh in May and about 71 kWh in December. Even in winter the output is still about 70% of the best month, which makes solar very dependable here. On the right is the average power over a day, peaking in the early afternoon. Over the year one panel makes about 1,061 kWh. Dust settling on the panels costs about 6% of that and heat about 5%.
 
 ### What happens if prices change
 
