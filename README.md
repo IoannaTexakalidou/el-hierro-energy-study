@@ -8,7 +8,7 @@ El Hierro is a small island in the Canary Islands with no power cable to the mai
 
 I built a computer model of the island's electricity, hour by hour for a whole year, using real measured data. Then I asked: what mix of wind turbines, solar panels and batteries would supply the island most cheaply?
 
-**My answer:** 1 wind turbine, 35 MW of solar panels and an 80 MWh battery would supply 97.5% of the island's electricity from wind and sun, for 65 EUR per MWh. Electricity from the diesel plant costs 196 EUR per MWh in fuel and maintenance alone, so this system would cost about a third as much. CO2 emissions would fall by 95%. The full equipment list, technical data and costs are in [TECHNICAL_DATA.md](TECHNICAL_DATA.md). How the code is built, and how I used AI, is in [HOW_IT_WAS_BUILT.md](HOW_IT_WAS_BUILT.md).
+**My answer:** 1 wind turbine, 35 MW of solar panels and an 80 MWh battery would supply 97.5% of the island's electricity from wind and sun, for 65 EUR per MWh. Electricity from the diesel plant costs 196 EUR per MWh in fuel and maintenance alone, so this system would cost about a third as much. CO2 emissions would fall by 95%. The full equipment list, technical data and costs are in [TECHNICAL_DATA.md](TECHNICAL_DATA.md). How the code is built, and how I used AI, is in [HOW_IT_WAS_BUILT.md](HOW_IT_WAS_BUILT.md). The equations are in [FORMULAS.md](FORMULAS.md).
 
 ## Some background
 
@@ -145,6 +145,8 @@ The 44% grid stability limit is something I inferred by matching my model to the
 Python (pandas, NumPy, Matplotlib), ERA5, PVGIS, REE grid data
 
 How the code is organised and how I used AI to build it: [HOW_IT_WAS_BUILT.md](HOW_IT_WAS_BUILT.md)
+
+The equations behind the model: [FORMULAS.md](FORMULAS.md)
 
 The code and data are private. I'm happy to walk through the model on a call.
 
